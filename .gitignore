@@ -1,0 +1,15 @@
+﻿# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+.vs/
+
+# SSIS backup
+*.dtsx.backup
+
+# OS
+Thumbs.db
+.DS_Store
