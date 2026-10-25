@@ -1,6 +1,5 @@
 # Northwind Data Warehouse – ETL Pipeline in SSIS
-
-An end-to-end ETL pipeline that builds a star-schema data warehouse for the fictional e-commerce company Northwind. Data is extracted from three different source types, cleaned and transformed in SSIS, and loaded into SQL Server for analysis.
+An ETL pipeline that builds a star-schema data warehouse for the fictional e-commerce company Northwind. Data is extracted from three different source types, cleaned and transformed in SSIS, and loaded into SQL Server.
 
 ## Data warehouse model
 
@@ -59,11 +58,11 @@ Each order line is matched to `CustomerKey`, `ProductKey` and `DateKey` through 
 
 ![Sample query](images/sample_query.png)
 
-Sales per product category and year, queried from the finished data warehouse. (1998 is lower because the Northwind data ends in May 1998.)
+Sales per product category and year, queried from the finished data warehouse.
 
 ## Tech stack
 
-- SQL Server / T-SQL
+- T-SQL
 - SQL Server Integration Services (SSIS) in Visual Studio
 - C# (Script Task for the API call)
 - draw.io for data modeling
@@ -75,8 +74,9 @@ Sales per product category and year, queried from the finished data warehouse. (
 3. Update the connection managers to point to your SQL Server instance and the location of `ProductCatalog_Extra.xlsx`
 4. Run `Package.dtsx` – the data warehouse is created automatically
 
-## Possible improvements
+## What I learned
 
-- Incremental loading instead of a full reload on every run
-- Logging rows that are filtered out, so data quality issues are visible
-- Parameterizing the Excel file path for easier deployment
+- How a star schema works, with a fact table in the middle and dimension tables around it
+- How messy data from Excel needs to be cleaned before it can be used
+- How to get data from an API and use it in an ETL pipeline
+
